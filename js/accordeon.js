@@ -1,17 +1,21 @@
-const contents = document.querySelectorAll('.program-line__content');
+const accordeon = () => {
+    const contents = document.querySelectorAll('.program-line__content');
 
-contents.forEach(item => {
-    const titles = item.querySelector('.program-line__title');
-    const descr = item.querySelector('.program-line__descr');
+    contents.forEach(item => {
+        const titles = item.querySelector('.program-line__title');
+        const descr = item.querySelector('.program-line__descr');
 
-    titles.addEventListener('click', () => {
+        titles.addEventListener('click', () => {
 
-        contents.forEach(el => {
-            const currentDescr = el.querySelector('.program-line__descr');
-            currentDescr.classList.remove('active');
+            contents.forEach(el => {
+                const currentDescr = el.querySelector('.program-line__descr');
+                currentDescr.classList.remove('active');
+            });
+
+
+            descr.classList.add('active');
         });
-
-
-        descr.classList.add('active');
     });
-});
+}
+
+accordeon();
